@@ -12,7 +12,7 @@ import org.springframework.context.annotation.FilterType;
 @Configuration
 
 /* 설명. 1. 기본적으로는 설정파일이 있는 패키지 및 하위만 Scan하지만 basePackages를 바꾸면 다른 범위까지 가능하다. */
-//@ComponentScan(basePackages = "com.ohgiraffers")
+@ComponentScan(basePackages = "com.ohgiraffers")
 
 /* 설명. 2. 범위 및 필터를 적용해서 제외하고자 하는 bean을 등록하는 경우(excludeFilters) */
 //@ComponentScan(basePackages = "com.ohgiraffers",
@@ -29,13 +29,13 @@ import org.springframework.context.annotation.FilterType;
 //            })
 
 /* 설명. 3. 범위 및 필터를 적용해서 등록하고자 하는 bean을 등록하는 경우(includeFilters) */
-@ComponentScan(basePackages = {"com.ohgiraffers", "com"},
-                useDefaultFilters = false,                      // 현재 설정 파일 bean 제외 나머지는 off
-                includeFilters = {
-                    @ComponentScan.Filter(
-                            type=FilterType.ASSIGNABLE_TYPE,
-                            classes = {MemberDAO.class}         // MemberDAO 타입 bean만 등록
-                    )
-                })
+//@ComponentScan(basePackages = {"com.ohgiraffers", "com"},
+//                useDefaultFilters = false,                      // 현재 설정 파일 bean 제외 나머지는 off
+//                includeFilters = {
+//                    @ComponentScan.Filter(
+//                            type=FilterType.ASSIGNABLE_TYPE,
+//                            classes = {MemberDAO.class}         // MemberDAO 타입 bean만 등록
+//                    )
+//                })
 public class ContextConfiguration {
 }
